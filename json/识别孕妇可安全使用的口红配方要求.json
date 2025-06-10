@@ -1,0 +1,78 @@
+{
+    "documents": [
+        {
+            "text": "孕期化妆品使用安全指南\n 前言\n 怀孕期间，女性的皮肤状态会发生显著变化，同时对化妆品成分的安\n全性要求也更加严格。 本指南基于国际权威机构的安全评估数据，为\n孕期女性提供科学、可靠的化妆品使用建议，确保母婴健康的同时维\n护肌肤状态。 \n 第一章\n \n孕期皮肤变化与需求\n 1.1 \n孕期皮肤生理变化\n",
+            "metadata": {
+                "document_display_name": "文档3.docx",
+                "document_source": "../examples/documents/real/文档3.docx",
+                "document_metadata": {}
+            },
+            "uid": "be98c2d9-f504-387d-8c37-615f7b3fe92d",
+            "score": 0.12692307692307692
+        },
+        {
+            "text": "• \n苯甲酸酯类防腐剂：\n - \n可能的内分泌干扰物\n - \n选择不含\nparaben\n的产品\n • \n化学防晒剂：\n - Oxybenzone\n、\nOctinoxate\n等\n - \n优先选择物理防晒\n 2.3 \n安全成分推荐（\nA\n级安全）\n 孕期可安全使用的成分：\n • \n透明质酸：\n - \n分子量大，不易透皮吸收\n - \n安全保湿，无已知副作用\n • \n维生素\nC\n（\nL-\n抗坏血酸）：\n - \n抗氧化，促进胶原合成\n - 推荐浓度<20%，避免刺激\n • 烟酰胺（维生素B3）：\n  - 改善肌肤状态，控制油脂\n  - 安全性高，推荐浓度2-5%\n• 神经酰胺：\n  - 修复皮肤屏障\n  - 天然成分，安全性极高\n• 甘油：\n  - 基础保湿成分\n  - 使用历史悠久，安全可靠\n• 物理防晒剂：\n  - 氧化锌、二氧化钛\n  - 不被皮肤吸收，安全性最高",
+            "metadata": {
+                "document_display_name": "文档3.docx",
+                "document_source": "../examples/documents/real/文档3.docx",
+                "document_metadata": {}
+            },
+            "uid": "be98c2d9-f504-387d-8c37-615f7b3fe92d",
+            "score": 0.1388888888888889
+        },
+        {
+            "text": "3.1 基础护肤步骤\n孕期护肤要点：\n• 简化护肤步骤：清洁-保湿-防晒三步骤\n• 选择温和无刺激产品：pH值接近皮肤（5.5-6.5）\n• 避免频繁更换产品：减少过敏风险\n• 注意防晒：选择SPF30+的物理防晒\n• 如有疑虑：及时咨询皮肤科医生\n",
+            "metadata": {
+                "document_display_name": "文档3.docx",
+                "document_source": "../examples/documents/real/文档3.docx",
+                "document_metadata": {}
+            },
+            "uid": "1f8ae1ea-ccce-3424-b719-e204952f8032",
+            "score": 0.13392857142857142
+        },
+        {
+            "text": "安心唐\n™ \n孕妇专用护肤套装用户手册\n 产品概述\n 安心唐\n™ \n孕妇专用护肤套装是专为孕期和哺乳期女性设计的安全护肤\n产品。 \n 👶\n \n品牌理念：安全护肤，心无旁骛，唐风雅韵\n 🤱 \n产品定位：孕期专用，安全第一\n 套装内容\n 本套装包含完整的孕期护肤方案：\n • \n温和洁面乳（\n120ml\n）：氨基酸配方，温和清洁\n",
+            "metadata": {
+                "document_display_name": "安心唐用户手册.docx",
+                "document_source": "../examples/documents/real/安心唐用户手册.docx",
+                "document_metadata": {}
+            },
+            "uid": "e5b41779-1527-37c5-b30b-98f1a6f15a0e",
+            "score": 0.12937062937062938
+        },
+        {
+            "text": "• \n保湿爽肤水（\n150ml\n）：无酒精配方，深层补水\n • \n滋润面霜（\n50ml\n）：天然保湿，长效滋润\n • \n妊娠纹预防霜（\n100ml\n）：专业配方，预防妊娠纹\n • \n唇部护理膏（\n4g\n）：天然成分，安全可食用级别\n 核心成分与功效\n 严格筛选孕期安全成分：\n • \n燕麦提取物：温和清洁，舒缓敏感\n",
+            "metadata": {
+                "document_display_name": "安心唐用户手册.docx",
+                "document_source": "../examples/documents/real/安心唐用户手册.docx",
+                "document_metadata": {}
+            },
+            "uid": "e5b41779-1527-37c5-b30b-98f1a6f15a0e",
+            "score": 0.15476190476190477
+        },
+        {
+            "text": "📋\n \n孕期使用透明质酸产品的安全性评估，请参考文档\n3\n第\n2.3\n节的安全\n成分推荐。 \n",
+            "metadata": {
+                "document_display_name": "文档6.docx",
+                "document_source": "../examples/documents/real/文档6.docx",
+                "document_metadata": {}
+            },
+            "uid": "68654e3e-a77a-3886-a3bd-c170de8d52f1",
+            "score": 0.12937062937062938
+        }
+    ],
+    "conversation": [
+        {
+            "role": "system",
+            "content": "\"You answer accurately a question based on sorted results fetched from a database.                      Say I don't know if the answer is not contained in the results.\","
+        },
+        {
+            "role": "user",
+            "content": "User Query: 识别孕妇可安全使用的口红配方要求\n\n                    Document: e5b41779-1527-37c5-b30b-98f1a6f15a0e - page page_start=0 page_end=0\n                    Content:\n                    • \n保湿爽肤水（\n150ml\n）：无酒精配方，深层补水\n • \n滋润面霜（\n50ml\n）：天然保湿，长效滋润\n • \n妊娠纹预防霜（\n100ml\n）：专业配方，预防妊娠纹\n • \n唇部护理膏（\n4g\n）：天然成分，安全可食用级别\n 核心成分与功效\n 严格筛选孕期安全成分：\n • \n燕麦提取物：温和清洁，舒缓敏感\n\n                    END OF CONTENT\n                    Metadata: {'document_display_name': '安心唐用户手册.docx', 'document_source': '../examples/documents/real/安心唐用户手册.docx', 'document_metadata': {}}\n\n                    \n\n                    Document: be98c2d9-f504-387d-8c37-615f7b3fe92d - page page_start=2 page_end=3\n                    Content:\n                    • \n苯甲酸酯类防腐剂：\n - \n可能的内分泌干扰物\n - \n选择不含\nparaben\n的产品\n • \n化学防晒剂：\n - Oxybenzone\n、\nOctinoxate\n等\n - \n优先选择物理防晒\n 2.3 \n安全成分推荐（\nA\n级安全）\n 孕期可安全使用的成分：\n • \n透明质酸：\n - \n分子量大，不易透皮吸收\n - \n安全保湿，无已知副作用\n • \n维生素\nC\n（\nL-\n抗坏血酸）：\n - \n抗氧化，促进胶原合成\n\n                    END OF CONTENT\n                    Metadata: {'document_display_name': '文档3.docx', 'document_source': '../examples/documents/real/文档3.docx', 'document_metadata': {}}\n\n                    \n\n                    Document: 1f8ae1ea-ccce-3424-b719-e204952f8032 - page page_start=5 page_end=5\n                    Content:\n                    • \n防腐增效：\n - pH\n调节：酸性环境增强防腐效果\n - \n螯合剂：破坏微生物细胞壁\n - \n多元醇：降低水分活度\n 🔍\n \n关于敏感肌肤适用的精华液配方设计，请查看文档\n2\n第\n3.1\n节的面膜\n选择要点。 \n 📋\n \n孕期可用的精华液成分安全性评估，请参考文档\n3\n第\n2.3\n节的安全成\n分推荐。 \n\n                    END OF CONTENT\n                    Metadata: {'document_display_name': '文档5.docx', 'document_source': '../examples/documents/real/文档5.docx', 'document_metadata': {}}\n\n                    \n\n                    Document: e5b41779-1527-37c5-b30b-98f1a6f15a0e - page page_start=0 page_end=0\n                    Content:\n                    安心唐\n™ \n孕妇专用护肤套装用户手册\n 产品概述\n 安心唐\n™ \n孕妇专用护肤套装是专为孕期和哺乳期女性设计的安全护肤\n产品。 \n 👶\n \n品牌理念：安全护肤，心无旁骛，唐风雅韵\n 🤱 \n产品定位：孕期专用，安全第一\n 套装内容\n 本套装包含完整的孕期护肤方案：\n • \n温和洁面乳（\n120ml\n）：氨基酸配方，温和清洁\n\n                    END OF CONTENT\n                    Metadata: {'document_display_name': '安心唐用户手册.docx', 'document_source': '../examples/documents/real/安心唐用户手册.docx', 'document_metadata': {}}\n\n                    \n\n                    Document: 68654e3e-a77a-3886-a3bd-c170de8d52f1 - page page_start=6 page_end=6\n                    Content:\n                    📋\n \n孕期使用透明质酸产品的安全性评估，请参考文档\n3\n第\n2.3\n节的安全\n成分推荐。 \n\n                    END OF CONTENT\n                    Metadata: {'document_display_name': '文档6.docx', 'document_source': '../examples/documents/real/文档6.docx', 'document_metadata': {}}\n\n                    \n\n                    Document: be98c2d9-f504-387d-8c37-615f7b3fe92d - page page_start=0 page_end=0\n                    Content:\n                    孕期化妆品使用安全指南\n 前言\n 怀孕期间，女性的皮肤状态会发生显著变化，同时对化妆品成分的安\n全性要求也更加严格。 本指南基于国际权威机构的安全评估数据，为\n孕期女性提供科学、可靠的化妆品使用建议，确保母婴健康的同时维\n护肌肤状态。 \n 第一章\n \n孕期皮肤变化与需求\n 1.1 \n孕期皮肤生理变化\n\n                    END OF CONTENT\n                    Metadata: {'document_display_name': '文档3.docx', 'document_source': '../examples/documents/real/文档3.docx', 'document_metadata': {}}\n\n                    "
+        },
+        {
+            "role": "assistant",
+            "content": "根据提供的文档内容，以下是关于孕妇可安全使用的口红配方要求的总结：\n\n1. **安全成分要求**：\n   - 应选择**天然成分**，并达到**可食用级别**的安全性（如文档中提到的\"唇部护理膏：天然成分，安全可食用级别\"）。\n   - 避免**苯甲酸酯类防腐剂**（Parabens），因其可能干扰内分泌（文档明确提到\"选择不含paraben的产品\"）。\n   - 避免**化学防晒剂**（如Oxybenzone、Octinoxate），优先选择物理防晒成分。\n\n2. **推荐安全成分**（A级安全）：\n   - **透明质酸**：分子量大不易透皮吸收，安全保湿（文档3第2.3节）。\n   - **维生素C（L-抗坏血酸）**：抗氧化且安全（文档3第2.3节）。\n   - **燕麦提取物**：温和舒缓，适合敏感肌肤（安心唐用户手册提及）。\n\n3. **其他注意事项**：\n   - 配方应通过**孕期专用安全评估**，参考国际权威机构标准（文档3前言部分强调）。\n   - 避免添加**刺激性防腐增效剂**（如强酸性pH调节剂、螯合剂等，文档5提及需谨慎）。\n\n未明确提及但可推断的要求：\n   - 口红基质应选择无重金属、无矿物油的天然油脂/蜡基。\n   - 色素需符合食品级标准（因唇部护理膏提到\"可食用级别\"）。\n\n注：文档中未直接描述口红配方，但通过唇部护理产品及安全成分推荐可归纳上述要求。"
+        }
+    ]
+}
