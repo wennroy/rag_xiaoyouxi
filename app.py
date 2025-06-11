@@ -41,7 +41,7 @@ if 'game_state' not in st.session_state:
 
 def main():
     st.title("🕵️ RAG特工黑客松")
-    st.markdown("### 💻 数据特工竞技场 - 用RAG系统破解机密任务")
+    # st.markdown("### 💻 数据特工竞技场 - 用RAG系统破解机密任务")
     
     # 侧边栏 - 游戏控制
     with st.sidebar:
