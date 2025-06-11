@@ -460,12 +460,10 @@ def stage3_generation_war():
                         border-radius: 8px;
                         color: #333;
                         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                        line-height: 1.6;
+                        line-height: 1.3;
                         min-height: 60px;
                         white-space: pre-wrap;
-                    ">
-                        {defense_prompt if defense_prompt else '暂无防御prompt'}
-                    </div>
+                    ">{defense_prompt if defense_prompt else '暂无防御prompt'}</div>
                 </div>
                 """,
                 unsafe_allow_html=True
@@ -489,15 +487,13 @@ def stage3_generation_war():
                         border-radius: 8px;
                         color: #333;
                         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                        line-height: 1.8;
+                        line-height: 1.0;
                         min-height: 200px;
                         max-height: 400px;
                         overflow-y: auto;
                         white-space: pre-wrap;
                         word-wrap: break-word;
-                    ">
-                        {generated_answer if generated_answer else '暂无生成答案'}
-                    </div>
+                    ">{generated_answer.strip() if generated_answer else '暂无生成答案'}</div>
                 </div>
                 """,
                 unsafe_allow_html=True
