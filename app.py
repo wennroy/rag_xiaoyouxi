@@ -197,14 +197,17 @@ def stage1_retrieval_storm():
     selected_query = st.session_state.game_state.get('selected_query', query_options['query1'])
     
     st.info(f"**当前任务**: {selected_query}")
-    
+    if 'stage1_query' not in st.session_state:
+        st.session_state.stage1_query = None
     # 检索界面
     col1, col2 = st.columns([2, 1])
     query_input = None
     with col1:
         st.subheader("🔎 检索操作")
         query_input = st.text_input("当前检索查询", value=selected_query, disabled=True)
-        
+        if st.session_state.stage1_query is None or st.session_state.stage1_query != query_input:
+            st.session_state.stage1_query = query_input
+            st.session_state.search_results = []
         if st.button("🚀 执行检索"):
             with st.spinner("正在检索文档..."):
                 # 调用后端检索函数
@@ -212,7 +215,7 @@ def stage1_retrieval_storm():
                 st.session_state.search_results = results
         
         # 显示检索结果
-        if 'search_results' in st.session_state:
+        if 'search_results' in st.session_state and st.session_state.search_results:
             st.subheader("📋 检索结果")
             for i, result in enumerate(st.session_state.search_results):
                 with st.expander(f"段落 {i+1} - 相关度分数: {result['score']:.3f}"):
@@ -221,7 +224,7 @@ def stage1_retrieval_storm():
     
     with col2:
         st.subheader("📝 提交答案")
-        if 'search_results' in st.session_state:
+        if 'search_results' in st.session_state and st.session_state.search_results:
             selected_paragraphs = st.multiselect(
                 "选择top3相关段落",
                 options=list(range(len(st.session_state.search_results))),
@@ -621,18 +624,18 @@ def evaluate_stage1_answer(selected_paragraphs, query):
     result = 0
     if query.strip() == "找出敏感肌可用的玻尿酸面膜核心成分":
         for selected_paragraph in selected_paragraphs:
-            if selected_paragraph in [0, 1, 2, 3, 5]:
+            if selected_paragraph in [0, 1, 2, 4, 5]:
                 result += 1
-        st.success(f"回答得分: {result}分。这里面段落5为不太相关的文档。其他都有一定的关联。")
+        st.success(f"回答得分: {result}分。这里面段落4为不太相关的文档。其他都有一定的关联。")
     elif query.strip() == "识别孕妇可安全使用的口红配方要求":
         result = 3
         if result == 3:
             st.success(f"回答得分: {result}分。在这个使用用例中，所有的文档都有一定的关联。")
     elif query.strip() == "确定抗衰老精华中的有效活性成分":
         for selected_paragraph in selected_paragraphs:
-            if selected_paragraph in [0, 1, 2, 5]:
+            if selected_paragraph in [0, 1, 3, 4, 5]:
                 result += 1
-        st.success(f"回答得分: {result}分。这里面段落4和段落5为不太相关的文档。其他都有一定的关联。")
+        st.success(f"回答得分: {result}分。这里面段落3为不太相关的文档。其他都有一定的关联。")
     return result
 
 def evaluate_stage2_answer(removed_paragraphs, reason, external_knowledge):
