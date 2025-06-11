@@ -319,7 +319,7 @@ def stage2_rerank_battle():
             current_order = st.session_state.get('dragged_order', list(range(len(reranked_results))))
             
             # 创建可拖拽的排序界面
-            st.write("**当前排序（可拖拽调整）**:")
+            st.write("**当前排序**:")
             
             # 使用selectbox来模拟拖拽排序
             new_order = []
@@ -360,7 +360,7 @@ def stage2_rerank_battle():
         if 'reranked_results' in st.session_state and 'dragged_order' in st.session_state:
             reranked_results = st.session_state.reranked_results
             current_order = st.session_state.dragged_order
-            
+
             # 多选删除低质量段落
             to_remove = st.multiselect(
                 "选择要删除的低质量段落",
