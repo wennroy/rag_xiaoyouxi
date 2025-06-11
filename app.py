@@ -55,7 +55,7 @@ def main():
             2: "⚡ 第二阶段：重排攻防战",
             3: "🎯 第三阶段：生成终极战",
             4: "💻 第四阶段：代码撰写小游戏",
-            5: "🏆 查看游戏结果"
+            5: "📊 查看文档数据"
         }
         
         selected_stage = st.radio(
@@ -84,18 +84,49 @@ def main():
         #     st.session_state.game_state['game_started'] = True
         #     st.rerun()
         
-        # if st.button("🔄 重置游戏"):
-        #     st.session_state.game_state = {
-        #         'current_stage': 0,
-        #         'total_score': 0,
-        #         'selected_query': '找出敏感肌可用的玻尿酸面膜核心成分',
-        #         'stage1_results': {},
-        #         'stage2_results': {},
-        #         'stage3_results': {},
-        #         'stage4_results': {},
-        #         'game_started': False
-        #     }
-        #     st.rerun()
+        if st.button("🔄 重置游戏"):
+            # 删除所有_rerank.json文件
+            import os
+            import glob
+            import sqlite3
+            
+            try:
+                # 删除json文件夹中的_rerank.json文件
+                rerank_files = glob.glob(os.path.join('json', '*_rerank.json'))
+                for file_path in rerank_files:
+                    if os.path.exists(file_path):
+                        os.remove(file_path)
+                        st.success(f"已删除文件: {file_path}")
+                
+                # 重置stage4数据库
+                conn = sqlite3.connect('stage4_game.db')
+                cursor = conn.cursor()
+                
+                # 清空所有表的数据
+                cursor.execute('DELETE FROM chat_history')
+                cursor.execute('DELETE FROM code_history')
+                cursor.execute('DELETE FROM teams')
+                
+                conn.commit()
+                conn.close()
+                st.success("已重置Stage4数据库")
+                
+            except Exception as e:
+                st.error(f"重置过程中出现错误: {e}")
+            
+            # 重置游戏状态
+            st.session_state.game_state = {
+                'current_stage': 0,
+                'total_score': 0,
+                'selected_query': '找出敏感肌可用的玻尿酸面膜核心成分',
+                'stage1_results': {},
+                'stage2_results': {},
+                'stage3_results': {},
+                'stage4_results': {},
+                'game_started': False
+            }
+            st.success("游戏状态已重置")
+            st.rerun()
     
     # 主游戏区域
     current_stage = st.session_state.game_state['current_stage']
@@ -117,34 +148,30 @@ def show_game_intro():
     st.markdown("""
     ## 🎯 游戏规则
     
-    ### 第一阶段：检索风暴（5分钟）
-    - 从干扰文档中定位关键证据
-    - 提交top3相关段落编号
-    - 正确段落：+2分/条，选中干扰文档：-3分
+    ### 第一阶段：检索风暴
+    - 通过检索查询到相关文档
+    - 提交top3相关段落的编号
     
-    ### 第二阶段：重排攻防战（8分钟）
+    ### 第二阶段：重排攻防战
     - 优化初始检索结果
-    - 删除2条最不相关段落并说明理由
-    - 添加1条外部知识
+    - 删除完全不想关或者混淆视听的段落
+    - 保存修改并提交
     
-    ### 第三阶段：生成终极战（10分钟）
-    - 生成可信报告并防御攻击
-    - 接收"幻觉炸弹"挑战
-    - 现场修正答案
+    ### 第三阶段：生成终极战
+    - 提供防御prompt，让LLM减少幻觉
+    - 生成检索之后的结果
     
-    ### 第四阶段：代码撰写小游戏（15分钟）
+    ### 第四阶段：代码撰写小游戏
     - 与AI助手对话获取编程指导
     - 编写Python代码生成Plotly可视化
-    - 团队协作，保存和分享代码历史
     - 实时预览可视化结果
-    
-    点击侧边栏的"🚀 开始游戏"按钮开始挑战！
+    - 谁画的图好看，谁就是赢家
     """)
 
 def stage1_retrieval_storm():
     """第一阶段：检索风暴"""
     st.header("🔍 第一阶段：检索风暴")
-    st.markdown("**任务**: 从干扰文档中定位关键证据")
+    st.markdown("**任务**: 提交top3相关段落的编号")
     
     # 查询选择
     st.subheader("🔍 选择检索任务")
@@ -364,7 +391,7 @@ def stage2_rerank_battle():
 def stage3_generation_war():
     """第三阶段：生成终极战"""
     st.header("🎯 第三阶段：生成终极战")
-    st.markdown("**任务**: 生成可信报告并防御攻击")
+    st.markdown("**任务**: 输入防御Prompt使LLM更准确地回答问题")
     
     col1, col2 = st.columns([1, 1])
     
@@ -473,19 +500,19 @@ def stage3_generation_war():
                 unsafe_allow_html=True
             )
             
-            if st.button("🏆 提交最终答案"):
-                # 保存结果到session state
-                st.session_state.game_state['stage3_results'] = {
-                    'query': st.session_state.get('selected_query', ''),
-                    'defense_prompt': st.session_state.get('defense_prompt', ''),
-                    'generated_answer': st.session_state.generated_answer
-                }
+            # if st.button("🏆 提交最终答案"):
+            #     # 保存结果到session state
+            #     st.session_state.game_state['stage3_results'] = {
+            #         'query': st.session_state.get('selected_query', ''),
+            #         'defense_prompt': st.session_state.get('defense_prompt', ''),
+            #         'generated_answer': st.session_state.generated_answer
+            #     }
                 
-                st.success("第三阶段完成！答案已提交")
+            #     st.success("第三阶段完成！答案已提交")
                 
-                if st.button("➡️ 进入第四阶段"):
-                    st.session_state.game_state['current_stage'] = 4
-                    st.rerun()
+            #     if st.button("➡️ 进入第四阶段"):
+            #         st.session_state.game_state['current_stage'] = 4
+            #         st.rerun()
 
 def show_game_results():
     """显示相关文档浏览器"""
@@ -557,8 +584,8 @@ def show_game_results():
                         if file_path.endswith('.csv'):
                             st.write("**CSV文件内容:**")
                             csv_df = pd.read_csv(file_path)
-                            st.dataframe(csv_df.head(20), use_container_width=True)
-                            st.info(f"显示前20行，总共 {len(csv_df)} 行")
+                            st.dataframe(csv_df, use_container_width=True)
+                            # st.info(f"显示前20行，总共 {len(csv_df)} 行")
                             
                         elif file_path.endswith('.json'):
                             st.write("**JSON文件内容:**")

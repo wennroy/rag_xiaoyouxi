@@ -175,7 +175,7 @@ def get_ai_response(user_message, team_name, current_code=""):
 3. 赢飞凡 - 高端市场稳定增长，年均增长8%，主打抗衰老
 
 **数据位置：**
-- CSV数据文件存储在：c:/Users/roywen/PycharmProjects/rag_xiaoyouxi/csv_data/
+- CSV数据文件存储在：csv_data/
 - 文件名格式：[品牌名]_销量数据_2018-2025.csv
 - 数据字段：year, month, sales_volume, sales_amount, unit_price
 
@@ -292,6 +292,28 @@ def stage4_coding_game():
         # 获取AI响应
         ai_response = get_ai_response(user_input, selected_team, current_code)
         save_chat_message(selected_team, 'ai', ai_response)
+        
+        # 自动提取AI响应中的Python代码
+        import re
+        
+        # 使用正则表达式提取代码块
+        code_pattern = r'```(?:python)?\s*\n([\s\S]*?)\n```'
+        code_matches = re.findall(code_pattern, ai_response, re.IGNORECASE)
+        
+        if code_matches:
+            # 取最后一个代码块（通常是最完整的）
+            extracted_code = code_matches[-1].strip()
+            
+            # 过滤掉明显不是Plotly相关的代码
+            if any(keyword in extracted_code.lower() for keyword in ['plotly', 'px.', 'go.', 'fig.', 'plot', 'chart']):
+                # 保存提取的代码到数据库
+                code_description = f"AI自动生成 - {user_input[:50]}..."
+                save_code(selected_team, extracted_code, code_description)
+                
+                # 更新代码编辑器的内容
+                st.session_state['code_editor'] = extracted_code
+                
+                st.success("✅ 已自动提取并保存AI生成的代码")
         
         st.rerun()
     
