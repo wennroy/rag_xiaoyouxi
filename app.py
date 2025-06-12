@@ -622,7 +622,7 @@ def evaluate_stage1_answer(selected_paragraphs, query):
         for selected_paragraph in selected_paragraphs:
             if selected_paragraph in [0, 1, 2, 4, 5]:
                 result += 1
-        st.success(f"回答得分: {result}分。这里面段落4为不太相关的文档。其他都有一定的关联。")
+        st.success(f"回答得分: {result}分。这里面段落4为混淆的文档。其他都有一定的关联。")
     elif query.strip() == "识别孕妇可安全使用的口红配方要求":
         result = 3
         if result == 3:
@@ -631,7 +631,7 @@ def evaluate_stage1_answer(selected_paragraphs, query):
         for selected_paragraph in selected_paragraphs:
             if selected_paragraph in [0, 1, 3, 4, 5]:
                 result += 1
-        st.success(f"回答得分: {result}分。这里面段落3为不太相关的文档。其他都有一定的关联。")
+        st.success(f"回答得分: {result}分。这里面段落3为混淆的文档。其他都有一定的关联。")
     return result
 
 def evaluate_stage2_answer(removed_paragraphs, reason, external_knowledge):
